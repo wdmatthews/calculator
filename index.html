@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Calculator</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css">
+  
+  <style>
+    .full-size {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-row no-gutters justify="center" align-content="center" class="full-size">
+          <v-col class="pa-0 d-flex">
+            <v-card class="rounded-0 mx-auto">
+              <v-sheet width="100%" height="56" color="grey darken-3" class="pa-4">
+                <p class="ma-0" v-text="expression"></p>
+              </v-sheet>
+              <v-card-text class="px-2 py-4">
+                <v-row class="mx-n1">
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '7'">7</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '8'">8</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '9'">9</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '/'">/</v-btn>
+                </v-row>
+                <v-row class="mx-n1">
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '4'">4</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '5'">5</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '6'">6</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '*'">*</v-btn>
+                </v-row>
+                <v-row class="mx-n1">
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '1'">1</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '2'">2</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '3'">3</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '-'">-</v-btn>
+                </v-row>
+                <v-row class="mx-n1">
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '0'">0</v-btn>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '.'">.</v-btn>
+                  <v-spacer></v-spacer>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="expression += '+'">+</v-btn>
+                </v-row>
+                <v-row class="mx-n1">
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="clear">C</v-btn>
+                  <v-spacer></v-spacer>
+                  <v-btn color="primary" elevation="2" class="ma-1" @click="calculate">=</v-btn>
+                </v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-main>
+    </v-app>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="math.js"></script>
+  <script src="vue-config.js"></script>
+</body>
+</html>
